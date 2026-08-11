@@ -11,12 +11,13 @@
             margin: 0;
             background-color: #ffffff;
             color: #222;
-            transition: 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 15px 30px;
             background-color: #e50914;
             color: white;
@@ -27,11 +28,18 @@
         }
 
         #botao {
-            margin-left: 20px;
             border: none;
             border-radius: 20px;
-            padding: 8px 15px;
+            padding: 10px 20px;
             cursor: pointer;
+            font-weight: bold;
+            background-color: #ffffff;
+            color: #e50914;
+            transition: 0.3s;
+        }
+
+        #botao:hover {
+            background-color: #f0f0f0;
         }
 
         main {
@@ -71,13 +79,18 @@
         }
 
         /* Modo escuro */
-        .escuro {
+        body.escuro {
             background-color: #121212;
-            color: white;
+            color: #ffffff;
         }
 
-        .escuro .descricao h2 {
+        body.escuro .descricao h2 {
             color: #ff3333;
+        }
+
+        body.escuro #botao {
+            background-color: #333333;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -93,10 +106,34 @@
     </header>
 
     <main>
-
         <div class="container-imagem">
             <img 
                 class="banner-filme"
                 src="https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSFMNIlPZx48O_cy7JdrLWa_kQXprZBKK4Q1HSimhJidJJ8ht041H5ewtZsSHe9omz77tE8uju2TnuktKlsTuG2686IPKoSarKaIpYDIJYq0e5zqmI3IhHpgFA.jpg?r=36a"
                 alt="Capa do filme Coraline">
-        </div
+        </div>
+
+        <section class="descricao">
+            <h2>Coraline e o Mundo Secreto</h2>
+            <p>
+                Enquanto explora sua nova casa, a jovem Coraline descobre uma porta secreta que a leva a uma versão alternativa de sua vida. A princípio, essa realidade paralela parece fascinante, mas logo revela segredos sombrios.
+            </p>
+            <p class="info">Gênero: Animação / Fantasia | Duração: 1h 40m</p>
+        </section>
+    </main>
+
+    <script>
+        function modoEscuro() {
+            document.body.classList.toggle('escuro');
+            
+            const botao = document.getElementById('botao');
+            if (document.body.classList.contains('escuro')) {
+                botao.textContent = 'Modo Claro';
+            } else {
+                botao.textContent = 'Modo Escuro';
+            }
+        }
+    </script>
+
+</body>
+</html>
