@@ -1,85 +1,102 @@
-<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Netflix Filmes</title> </head> <body style="margin:0; font-family:Arial; background-color:#f2f2f2;">
-<!-- Parte de cima azul -->
-<header style="
-    background-color:#0077cc;
-    color:white;
-    padding:20px;
-    display:flex;
-    align-items:center;
-">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Filmes - Coraline</title>
 
-    <h1>Netflix Filmes</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #222;
+            transition: 0.3s;
+        }
 
-    <button onclick="modoEscuro()" style="
-        margin-left:20px;
-        border-radius:20px;
-        padding:8px 15px;
-        border:none;
-    ">
-        Modo Escuro
-    </button>
+        header {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #e50914;
+            color: white;
+        }
 
-</header>
+        header h1 {
+            margin: 0;
+        }
 
-<main style="padding:40px;">
+        #botao {
+            margin-left: 20px;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
 
-    <!-- Imagem e texto separados, lado a lado -->
-    <div style="
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:40px;
-    ">
+        main {
+            text-align: center;
+            padding: 30px;
+        }
 
-        <!-- Imagem -->
-        <div style="
-            background-color:white;
-            padding:15px;
-            border-radius:10px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.2);
-        ">
+        .container-imagem {
+            margin-bottom: 20px;
+        }
 
-            <img
+        .banner-filme {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .descricao {
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .descricao h2 {
+            font-size: 30px;
+            color: #e50914;
+        }
+
+        .descricao p {
+            font-size: 18px;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Modo escuro */
+        .escuro {
+            background-color: #121212;
+            color: white;
+        }
+
+        .escuro .descricao h2 {
+            color: #ff3333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Netflix Filmes</h1>
+
+        <button id="botao" onclick="modoEscuro()">
+            Modo Escuro
+        </button>
+    </header>
+
+    <main>
+
+        <div class="container-imagem">
+            <img 
+                class="banner-filme"
                 src="https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSFMNIlPZx48O_cy7JdrLWa_kQXprZBKK4Q1HSimhJidJJ8ht041H5ewtZsSHe9omz77tE8uju2TnuktKlsTuG2686IPKoSarKaIpYDIJYq0e5zqmI3IhHpgFA.jpg?r=36a"
-                alt="Capa do filme Coraline"
-                style="
-                    width:180px;
-                    height:180px;
-                    object-fit:cover;
-                    border-radius:8px;
-                "
-            >
-
-        </div>
-
-        <!-- Texto separado -->
-        <div style="
-            background-color:#6a0dad;
-            color:white;
-            padding:25px;
-            border-radius:10px;
-            width:400px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.2);
-        ">
-
-            <h2>Coraline e o Mundo Secreto</h2>
-
-            <p style="line-height:1.6;">
-                Coraline é uma garota curiosa que se muda para uma nova
-                casa e descobre uma passagem secreta para um mundo
-                aparentemente perfeito.
-            </p>
-
-            <p style="line-height:1.6;">
-                Porém, ela logo percebe que esse mundo esconde um segredo
-                assustador. Coraline precisa enfrentar seus medos e
-                encontrar coragem para salvar sua família.
-            </p>
-
-        </div>
-
-    </div>
-
-</main>
-
-</body> </html>
+                alt="Capa do filme Coraline">
+        </div
