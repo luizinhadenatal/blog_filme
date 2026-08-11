@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #ffffff;
-            color: #222;
+            color: #000000;
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -19,8 +19,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 15px 30px;
-            background-color: #e50914;
-            color: white;
+            background-color: #000000;
+            color: #ffffff;
         }
 
         header h1 {
@@ -28,18 +28,18 @@
         }
 
         #botao {
-            border: none;
+            border: 1px solid #000000;
             border-radius: 20px;
             padding: 10px 20px;
             cursor: pointer;
             font-weight: bold;
             background-color: #ffffff;
-            color: #e50914;
+            color: #000000;
             transition: 0.3s;
         }
 
         #botao:hover {
-            background-color: #f0f0f0;
+            background-color: #e0e0e0;
         }
 
         main {
@@ -56,6 +56,7 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            filter: grayscale(100%);
         }
 
         .descricao {
@@ -66,7 +67,7 @@
 
         .descricao h2 {
             font-size: 30px;
-            color: #e50914;
+            color: #000000;
         }
 
         .descricao p {
@@ -78,19 +79,20 @@
             font-weight: bold;
         }
 
-        /* Modo escuro */
+        /* Modo escuro (Escala de Cinza) */
         body.escuro {
             background-color: #121212;
             color: #ffffff;
         }
 
         body.escuro .descricao h2 {
-            color: #ff3333;
+            color: #ffffff;
         }
 
         body.escuro #botao {
             background-color: #333333;
             color: #ffffff;
+            border-color: #ffffff;
         }
     </style>
 </head>
