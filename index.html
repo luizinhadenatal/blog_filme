@@ -1,35 +1,52 @@
-<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Netflix Filmes</title> <link rel="stylesheet" href="style.css"> </head> <body>
-<header>
+<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Netflix Filmes</title> </head> <body style="margin:0; font-family:Arial; background-color:#f2f2f2;">
+<header style="background-color:#e50914; color:white; padding:20px; display:flex; align-items:center;">
     <h1>Netflix Filmes</h1>
 
-    <button id="botao" onclick="modoEscuro()"
+    <button onclick="modoEscuro()"
         style="margin-left:10px; border-radius:20px; padding:5px;">
         Modo Escuro
     </button>
 </header>
 
-<main>
+<main style="padding:40px;">
 
-    <div class="filme">
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:25px;
+        background-color:#6a0dad;
+        padding:20px;
+        border-radius:15px;
+        color:white;
+        max-width:700px;
+        margin:auto;
+    ">
 
-        <img class="banner-filme"
+        <!-- Imagem pequena à esquerda -->
+        <img
             src="https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSFMNIlPZx48O_cy7JdrLWa_kQXprZBKK4Q1HSimhJidJJ8ht041H5ewtZsSHe9omz77tE8uju2TnuktKlsTuG2686IPKoSarKaIpYDIJYq0e5zqmI3IhHpgFA.jpg?r=36a"
-            alt="Capa do filme Coraline">
+            alt="Capa do filme Coraline"
+            style="
+                width:150px;
+                height:150px;
+                object-fit:cover;
+                border-radius:10px;
+            "
+        >
 
-        <div class="descricao">
+        <!-- Escrita à direita -->
+        <div>
 
             <h2>Coraline e o Mundo Secreto</h2>
 
-            <p>
-                Coraline é uma garota curiosa que se muda para uma nova
-                casa e descobre uma passagem secreta para um mundo
-                aparentemente perfeito.
+            <p style="line-height:1.5;">
+                Coraline é uma garota curiosa que descobre uma passagem
+                secreta para um mundo misterioso.
             </p>
 
-            <p>
-                Porém, ela logo percebe que esse mundo esconde um
-                segredo assustador. Coraline precisa enfrentar seus
-                medos e encontrar coragem para salvar sua família.
+            <p style="line-height:1.5;">
+                No começo tudo parece perfeito, mas Coraline percebe que
+                existe um segredo assustador por trás daquele lugar.
             </p>
 
         </div>
