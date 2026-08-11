@@ -6,93 +6,183 @@
     <title>Netflix Filmes - Coraline</title>
 
     <style>
+        :root {
+            --bg-principal: #0b132b;
+            --bg-card: #1c2541;
+            --azul-destaque: #48cae4;
+            --texto-claro: #ffffff;
+            --texto-secundario: #c5d3e8;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #ffffff;
-            color: #000000;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: var(--bg-principal);
+            color: var(--texto-claro);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 30px;
-            background-color: #000000;
-            color: #ffffff;
+            padding: 20px 50px;
+            background-color: #070d1f;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
         header h1 {
             margin: 0;
+            font-size: 2rem;
+            color: var(--azul-destaque);
+            letter-spacing: 1px;
         }
 
         #botao {
-            border: 1px solid #000000;
-            border-radius: 20px;
-            padding: 10px 20px;
+            border: 2px solid var(--azul-destaque);
+            border-radius: 25px;
+            padding: 12px 25px;
             cursor: pointer;
             font-weight: bold;
-            background-color: #ffffff;
-            color: #000000;
-            transition: 0.3s;
+            font-size: 1rem;
+            background-color: transparent;
+            color: var(--azul-destaque);
+            transition: all 0.3s ease;
         }
 
         #botao:hover {
-            background-color: #e0e0e0;
+            background-color: var(--azul-destaque);
+            color: #070d1f;
+            box-shadow: 0 0 12px var(--azul-destaque);
         }
 
         main {
-            text-align: center;
-            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 50px;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .container-imagem {
-            margin-bottom: 20px;
+            flex: 1 1 350px;
+            display: flex;
+            justify-content: center;
         }
 
         .banner-filme {
-            width: 250px;
+            width: 100%;
+            max-width: 380px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            filter: grayscale(100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
         }
 
-        .descricao {
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
+        .banner-filme:hover {
+            transform: scale(1.03);
         }
 
-        .descricao h2 {
-            font-size: 30px;
-            color: #000000;
+        .conteudo {
+            flex: 2 1 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        .descricao p {
-            font-size: 18px;
+        .titulo-filme {
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--azul-destaque);
+            line-height: 1.2;
         }
 
-        .info {
-            margin-top: 20px;
+        .badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: var(--bg-card);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--texto-secundario);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sinopse {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--texto-secundario);
+            margin: 0;
+        }
+
+        .grade-informacoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-item {
+            flex: 1 1 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-rotulo {
+            font-size: 0.95rem;
+            color: var(--azul-destaque);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             font-weight: bold;
         }
 
-        /* Modo escuro (Escala de Cinza) */
-        body.escuro {
-            background-color: #121212;
-            color: #ffffff;
+        .info-valor {
+            font-size: 1.15rem;
+            color: var(--texto-claro);
         }
 
-        body.escuro .descricao h2 {
-            color: #ffffff;
+        /* Estilo para Alternar Tema */
+        body.modo-claro {
+            --bg-principal: #eef4f8;
+            --bg-card: #ffffff;
+            --azul-destaque: #0077b6;
+            --texto-claro: #0d1b2a;
+            --texto-secundario: #415a77;
         }
 
-        body.escuro #botao {
-            background-color: #333333;
-            color: #ffffff;
-            border-color: #ffffff;
+        body.modo-claro header {
+            background-color: #d8e2dc;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .titulo-filme {
+                font-size: 2.2rem;
+            }
+
+            .sinopse {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -102,8 +192,8 @@
     <header>
         <h1>Netflix Filmes</h1>
 
-        <button id="botao" onclick="modoEscuro()">
-            Modo Escuro
+        <button id="botao" onclick="alternarTema()">
+            Modo Claro
         </button>
     </header>
 
@@ -115,24 +205,54 @@
                 alt="Capa do filme Coraline">
         </div>
 
-        <section class="descricao">
-            <h2>Coraline e o Mundo Secreto</h2>
-            <p>
-                Enquanto explora sua nova casa, a jovem Coraline descobre uma porta secreta que a leva a uma versão alternativa de sua vida. A princípio, essa realidade paralela parece fascinante, mas logo revela segredos sombrios.
+        <section class="conteudo">
+            <h2 class="titulo-filme">Coraline e o Mundo Secreto</h2>
+
+            <div class="badges">
+                <span class="badge">10+</span>
+                <span class="badge">2009</span>
+                <span class="badge">1h 40m</span>
+                <span class="badge">Stop-Motion</span>
+            </div>
+
+            <p class="sinopse">
+                Enquanto explora sua nova casa, a jovem Coraline descobre uma porta secreta que a leva a uma versão alternativa e aparentemente perfeita de sua vida. No entanto, essa realidade paralela logo revela segredos sombrios e perigosos, forçando-a a usar toda a sua coragem para salvar sua verdadeira família.
             </p>
-            <p class="info">Gênero: Animação / Fantasia | Duração: 1h 40m</p>
+
+            <div class="grade-informacoes">
+                <div class="info-item">
+                    <span class="info-rotulo">Gênero</span>
+                    <span class="info-valor">Animação, Fantasia, Sombrio</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-rotulo">Direção</span>
+                    <span class="info-valor">Henry Selick</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-rotulo">Baseado em</span>
+                    <span class="info-valor">Livro de Neil Gaiman</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-rotulo">Estúdio</span>
+                    <span class="info-valor">Laika Studios</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-rotulo">Avaliação</span>
+                    <span class="info-valor">★ 7.7 / 10 (IMDb)</span>
+                </div>
+            </div>
         </section>
     </main>
 
     <script>
-        function modoEscuro() {
-            document.body.classList.toggle('escuro');
+        function alternarTema() {
+            document.body.classList.toggle('modo-claro');
             
             const botao = document.getElementById('botao');
-            if (document.body.classList.contains('escuro')) {
-                botao.textContent = 'Modo Claro';
+            if (document.body.classList.contains('modo-claro')) {
+                botao.textContent = 'Modo Azul Escuro';
             } else {
-                botao.textContent = 'Modo Escuro';
+                botao.textContent = 'Modo Claro';
             }
         }
     </script>
